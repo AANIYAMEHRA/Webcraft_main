@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../public/logo.svg";
 
 const NAV_LINKS = [
@@ -48,9 +48,9 @@ const Navbar = () => {
         scrolled ? "bg-white" : "bg-transparent"
       }`}
     >
-      <nav className="flex h-[96px] w-full items-center px-6 lg:px-[47px]">
+      <nav className="flex h-[70px] w-full items-center px-6 lg:pl-[36px] lg:pr-[64px]">
         <a href="/" className="shrink-0">
-          <img src={logo} alt="Webcraft-IT" className="h-[50px] w-auto max-w-none" />
+          <img src={logo} alt="Webcraft-IT" className="h-[45px] w-auto max-w-none" />
         </a>
 
         <div className="ml-auto hidden items-center justify-end lg:flex">
@@ -73,7 +73,7 @@ const Navbar = () => {
                       borderBottomColor: isActive ? TEAL : "transparent",
                       textDecoration: "none",
                     }}
-                    className="block whitespace-nowrap border-b-[3px] border-solid px-3 py-2.5 text-[16px] font-normal leading-none transition-colors"
+                    className="block whitespace-nowrap border-b-[3px] border-solid px-5 py-2.5 text-[18px] font-normal leading-none transition-colors"
                   >
                     {label}
                   </a>
@@ -85,7 +85,7 @@ const Navbar = () => {
           <a
             href="#"
             style={{ color: "#fff", textDecoration: "none" }}
-            className="ml-4 inline-flex h-[44px] w-[165px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-[#1f9a86] to-[#41b87b] text-[17px] font-semibold shadow-[0_10px_24px_rgba(31,157,122,0.25)] transition hover:brightness-105"
+            className="ml-5 inline-flex h-11 w-[166px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-[#1f9a86] to-[#41b87b] text-[17px] font-semibold shadow-[0_10px_24px_rgba(31,157,122,0.25)] transition hover:brightness-105"
           >
             Contact Us
             <ArrowIcon />
@@ -124,15 +124,17 @@ const Navbar = () => {
               <li key={label}>
                 <a
                   href={href}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     setActive(label);
                     setOpen(false);
                   }}
                   style={{
                     color: active === label ? TEAL : DARK,
+                    borderBottomColor: active === label ? TEAL : "transparent",
                     textDecoration: "none",
                   }}
-                  className="block py-3 text-lg"
+                  className="inline-block border-b-[3px] border-solid py-3 text-lg"
                 >
                   {label}
                 </a>
@@ -142,7 +144,7 @@ const Navbar = () => {
           <a
             href="#"
             style={{ color: "#fff", textDecoration: "none" }}
-            className="mt-4 inline-flex h-12 items-center gap-3 rounded-full bg-gradient-to-r from-[#1f9a86] to-[#41b87b] px-7 text-base font-semibold"
+            className="mt-4 inline-flex h-10 items-center gap-2 rounded-full bg-gradient-to-r from-[#1f9a86] to-[#41b87b] px-6 text-sm font-semibold"
           >
             Contact Us
             <ArrowIcon />

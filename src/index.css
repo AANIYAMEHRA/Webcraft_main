@@ -19,3 +19,21 @@ body {
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
+
+.home-hero-title {
+  margin: 31px 0 0;
+  color: #0d2549;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.28;
+}
+
+@media (max-width: 767px) {
+  .home-hero-title {
+    margin-top: 24px;
+    font-size: clamp(44px, 11vw, 60px);
+    line-height: 1.12;
+  }
+}
