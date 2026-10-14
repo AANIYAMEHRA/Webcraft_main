@@ -1,130 +1,162 @@
-const SparkleIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path
-      d="M12 2.5 14.1 9.9 21.5 12l-7.4 2.1L12 21.5l-2.1-7.4L2.5 12l7.4-2.1L12 2.5Z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-const HeroArtwork = () => (
+const ArrowIcon = () => (
   <svg
-    className="absolute right-[-42px] top-[110px] h-[620px] w-[820px] max-w-none max-lg:right-[-250px] max-lg:opacity-70 max-md:hidden"
-    viewBox="0 0 820 620"
+    className="h-5 w-5"
+    viewBox="0 0 24 24"
     fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     aria-hidden="true"
   >
-    <defs>
-      <linearGradient id="orbGradient" x1="350" y1="370" x2="560" y2="570" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#2D9CBB" />
-        <stop offset=".53" stopColor="#1887A1" />
-        <stop offset="1" stopColor="#40C58E" />
-      </linearGradient>
-      <linearGradient id="nodeGradient" x1="205" y1="158" x2="310" y2="260" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#45C2A1" />
-        <stop offset="1" stopColor="#56BBA1" />
-      </linearGradient>
-      <radialGradient id="orbGlow" cx="0" cy="0" r="1" gradientTransform="matrix(0 180 -180 0 455 410)" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#35BFA1" stopOpacity=".34" />
-        <stop offset="1" stopColor="#55C7B2" stopOpacity="0" />
-      </radialGradient>
-      <filter id="softShadow" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
-        <feGaussianBlur stdDeviation="10" />
-      </filter>
-      <filter id="cardShadow" x="70" y="-15" width="230" height="130" colorInterpolationFilters="sRGB">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="8" />
-        <feOffset dy="8" />
-        <feComponentTransfer>
-          <feFuncA type="linear" slope=".12" />
-        </feComponentTransfer>
-        <feMerge>
-          <feMergeNode />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
-    </defs>
-
-    <path
-      d="m255 198 196 168 202-190 18 190-216 84"
-      stroke="#61C9B2"
-      strokeDasharray="8 10"
-      strokeOpacity=".72"
-      strokeWidth="2"
-    />
-    <path
-      d="m255 198 395-22 18 190"
-      stroke="#6CCEBB"
-      strokeDasharray="6 11"
-      strokeOpacity=".48"
-      strokeWidth="1.5"
-    />
-    <path
-      d="m455 410 165-105 48-129"
-      stroke="#54C6A4"
-      strokeDasharray="3 11"
-      strokeOpacity=".42"
-      strokeWidth="1.5"
-    />
-
-    <circle cx="255" cy="198" r="65" fill="#55BEA8" fillOpacity=".4" filter="url(#softShadow)" />
-    <circle cx="255" cy="198" r="53" fill="url(#nodeGradient)" />
-    <circle cx="650" cy="176" r="50" fill="#469DB7" fillOpacity=".26" filter="url(#softShadow)" />
-    <circle cx="650" cy="176" r="40" fill="#399EB8" fillOpacity=".62" stroke="#59B8C7" strokeWidth="2" />
-    <path d="m625 195 51-48m-29 21 17-2-2 17" stroke="#36B797" strokeOpacity=".72" strokeWidth="2" />
-    <circle cx="315" cy="251" r="6.5" fill="#68D6AA" />
-    <circle cx="484" cy="394" r="6" fill="#55C8A1" />
-
-    <circle cx="455" cy="410" r="190" fill="url(#orbGlow)" />
-    <circle cx="455" cy="410" r="166" fill="#2E93A9" fillOpacity=".12" />
-    <circle cx="455" cy="410" r="144" stroke="#65C8C1" strokeOpacity=".32" strokeWidth="2" />
-    <circle cx="455" cy="410" r="128" stroke="#54C2B1" strokeOpacity=".5" strokeWidth="2" strokeDasharray="4 8" />
-    <circle cx="455" cy="410" r="112" fill="url(#orbGradient)" stroke="#53C5B5" strokeOpacity=".8" strokeWidth="4" />
-    <circle cx="455" cy="410" r="98" stroke="#76D0B7" strokeOpacity=".38" strokeWidth="2" />
-    <circle cx="455" cy="410" r="76" stroke="#83D3B6" strokeOpacity=".32" strokeWidth="1.5" />
-    <circle cx="455" cy="410" r="46" fill="#3DB99D" fillOpacity=".35" />
-    <circle cx="484" cy="394" r="5" fill="#56D29E" />
-
-    <g filter="url(#cardShadow)">
-      <rect x="100" y="0" width="160" height="80" rx="24" fill="white" />
-      <rect x="124" y="18" width="44" height="44" rx="13" fill="#39B48E" />
-      <foreignObject x="135" y="29" width="22" height="22">
-        <div xmlns="http://www.w3.org/1999/xhtml" className="h-full w-full text-white">
-          <SparkleIcon />
-        </div>
-      </foreignObject>
-      <text x="181" y="47" fill="#18314E" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="600">
-        GenAI
-      </text>
-    </g>
+    <path d="M4 12h16M15 6l6 6-6 6" />
   </svg>
 );
 
-const Hero = () => (
-  <section className="relative min-h-[850px] overflow-hidden px-[max(28px,calc((100vw-1814px)/2))] pt-[193px] max-md:min-h-[760px] max-md:px-6 max-md:pt-24">
-    <HeroArtwork />
+const SparkleIcon = () => (
+  <svg className="h-[72px] w-[72px]" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+    <path
+      d="M18 40c12-4 17-10 19-25 3 14 8 20 22 24-14 3-19 9-22 23-2-14-7-19-19-22Z"
+      stroke="white"
+      strokeWidth="4"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M49 18c6-2 9-5 10-11 1 6 4 9 10 11-6 1-9 4-10 10-1-6-4-9-10-10Z"
+      stroke="white"
+      strokeWidth="3"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
-    <div className="relative z-10 max-w-[1020px]">
-      <span className="inline-flex h-11 items-center rounded-full border border-[#b8e4dc] bg-white/10 px-6 font-mono text-[16px] font-bold tracking-[0.14em] text-[#20a596]">
-        AI SOLUTIONS
+const Icon = ({ children }) => (
+  <span className="flex h-8 w-8 shrink-0 items-center justify-center text-[#38b79d]">
+    {children}
+  </span>
+);
+
+const LightbulbIcon = () => (
+  <svg viewBox="0 0 28 28" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M9 19c0-2-4-4-4-9a9 9 0 0 1 18 0c0 5-4 7-4 9H9Z" />
+    <path d="M10 23h8m-7 3h6m-3-22v3m-8 3h3m10 0h3" />
+  </svg>
+);
+
+const TrendIcon = () => (
+  <svg viewBox="0 0 28 28" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="m4 20 7-7 5 4 8-10m-7 0h7v7" />
+  </svg>
+);
+
+const CubeIcon = () => (
+  <svg viewBox="0 0 28 28" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="m14 3 10 5.5v11L14 25 4 19.5v-11L14 3Z" />
+    <path d="m4 8.5 10 5.5 10-5.5M14 14v11" />
+  </svg>
+);
+
+const GearIcon = () => (
+  <svg viewBox="0 0 28 28" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="m11 3 1-.5h4l1 3 2 1 3-1 2 3-2 2v3l2 2-2 3-3-1-2 1-1 3h-4l-1-3-2-1-3 1-2-3 2-2v-3L4 9l2-3 3 1 2-1 1-3Z" transform="translate(0 1)" />
+    <circle cx="14" cy="14" r="3.5" />
+  </svg>
+);
+
+const FeatureCard = ({ eyebrow, title, icon, className }) => (
+  <div className={`absolute z-10 flex items-center gap-2 rounded-[22px] border border-[#edf5f3] bg-white/95 px-4 py-2.5 shadow-[0_10px_24px_rgba(23,67,81,0.09)] ${className}`}>
+    <Icon>{icon}</Icon>
+    <span className="leading-tight">
+      <span className="block text-[11px] font-medium uppercase tracking-[0.08em] text-[#8997a9]">
+        {eyebrow}
       </span>
+      <span className="block whitespace-nowrap text-[16px] font-semibold text-[#10294d]">
+        {title}
+      </span>
+    </span>
+  </div>
+);
 
-      <h1 className="mt-[43px] font-serif text-[clamp(56px,5.1vw,96px)] font-bold leading-[0.96] tracking-[-0.045em] text-[#0d2549]">
-        <span className="block">Intelligent AI.</span>
-        <span className="block bg-gradient-to-r from-[#299e9f] via-[#248aa7] to-[#3cbb84] bg-clip-text text-transparent">
-          Measurable Outcomes.
+const OrbitArtwork = () => (
+  <div className="pointer-events-none absolute right-[5.7%] top-[8px] hidden h-[610px] w-[650px] xl:block" aria-hidden="true">
+    <svg className="absolute inset-0 h-full w-full" viewBox="0 0 650 610" fill="none">
+      <circle cx="330" cy="300" r="298" stroke="#39ad9e" strokeOpacity=".28" strokeWidth="3" strokeDasharray="6 18" />
+    </svg>
+    <div className="absolute left-[330px] top-[300px] h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#72c6b9]/25" />
+    <div className="absolute left-[330px] top-[300px] h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#65bdb5]/35" />
+    <div className="absolute left-[330px] top-[300px] flex h-[250px] w-[250px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-[#2ca697] to-[#37b77d] shadow-[0_22px_50px_rgba(37,153,133,0.24)]">
+      <SparkleIcon />
+    </div>
+    <span className="absolute left-[165px] top-[143px] h-[15px] w-[15px] rounded-full bg-[#43b99b] shadow-[0_4px_12px_rgba(31,157,122,0.3)]" />
+    <span className="absolute left-[523px] top-[239px] h-[15px] w-[15px] rounded-full bg-[#43b99b] shadow-[0_4px_12px_rgba(31,157,122,0.3)]" />
+    <span className="absolute left-[258px] top-[509px] h-[15px] w-[15px] rounded-full bg-[#43b99b] shadow-[0_4px_12px_rgba(31,157,122,0.3)]" />
+
+    <FeatureCard eyebrow="Smarter" title="AI Solutions" icon={<LightbulbIcon />} className="left-[50px] top-[10px]" />
+    <FeatureCard eyebrow="Sharper" title="Research" icon={<TrendIcon />} className="right-[35px] top-[20px]" />
+    <FeatureCard eyebrow="Built" title="Products" icon={<CubeIcon />} className="left-[30px] top-[478px]" />
+    <FeatureCard eyebrow="Engineered" title="Services" icon={<GearIcon />} className="right-[25px] top-[510px]" />
+  </div>
+);
+
+const STATS = [
+  { value: "17+", label: "Years Established" },
+  { value: "3000+", label: "Clients Served" },
+  { value: "230+", label: "Professionals" },
+  { value: "96%", label: "Client Retention" },
+];
+
+const Hero = () => (
+  <section className="relative mx-auto min-h-[690px] max-w-[1536px] overflow-hidden px-[max(42px,calc((100vw-1450px)/2))] pt-[10px] max-md:min-h-0 max-md:px-6 max-md:pb-12 max-md:pt-10">
+    <OrbitArtwork />
+    <div className="relative z-10 max-w-[690px]">
+      <div className="inline-flex h-[37px] items-center gap-2 whitespace-nowrap rounded-full border border-[#c4e6df] bg-[#dff2ed]/75 px-4 font-mono text-[14px] font-bold tracking-[0.08em] text-[#1b9f91] max-md:gap-1 max-md:px-2 max-md:text-[11px] max-md:tracking-[0.03em]">
+        <span className="h-3.5 w-3.5 rounded-full bg-[#76cba7]" />
+        AI-LED <span>·</span> RESEARCH-BACKED <span>·</span> DELIVERY-READY
+      </div>
+
+      <h1 className="home-hero-title">
+        <span className="block whitespace-nowrap max-sm:whitespace-normal">Smarter Decisions.</span>
+        <span className="block whitespace-nowrap bg-gradient-to-r from-[#2ca797] via-[#248aa7] to-[#3cbb84] bg-clip-text text-transparent max-sm:whitespace-normal">
+          Stronger Products.
         </span>
       </h1>
 
-      <p className="mt-8 max-w-[610px] text-lg leading-8 text-[#405971] max-md:text-base">
-        Turn intelligence into impact with AI solutions built to deliver measurable outcomes.
+      <p className="mt-7 max-w-[620px] text-[21px] leading-[1.65] text-[#6e8096] max-md:mt-5 max-md:text-base">
+        Webcraft combines AI solutions and deep research with proven engineering to help you decide
+        what to build, then build it right.
       </p>
-      <a
-        href="#solutions"
-        className="mt-7 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#209d91] to-[#40b980] px-7 py-4 font-semibold text-white shadow-[0_10px_24px_rgba(31,157,122,0.25)] transition hover:brightness-105"
-      >
-        Explore AI solutions
-        <span aria-hidden="true">→</span>
-      </a>
+
+      <div className="mt-12 flex flex-wrap items-center gap-5 max-md:mt-7 max-md:gap-3">
+        <a
+          href="#solutions"
+          className="inline-flex h-16 items-center gap-3 rounded-full bg-gradient-to-r from-[#209d91] to-[#40b980] px-8 text-[18px] font-semibold text-white shadow-[0_10px_24px_rgba(31,157,122,0.23)] transition hover:brightness-105 max-md:h-12 max-md:px-5 max-md:text-sm"
+        >
+          Explore AI Solutions
+          <ArrowIcon />
+        </a>
+        <a
+          href="#research"
+          className="inline-flex h-16 items-center rounded-full border-2 border-[#e4e9ec] bg-white/80 px-8 text-[18px] font-semibold text-[#18314e] transition-colors hover:border-[#40b980] max-md:h-12 max-md:px-5 max-md:text-sm"
+        >
+          See Research Capabilities
+        </a>
+      </div>
+
+      <div className="mt-[74px] grid max-w-[700px] grid-cols-4 max-sm:mt-10 max-sm:grid-cols-2">
+        {STATS.map(({ value, label }, index) => (
+          <div
+            key={label}
+            className={`text-center ${index > 0 ? "border-l border-[#dbe2e7]" : ""} max-sm:mb-5`}
+          >
+            <strong className="block text-[38px] font-bold leading-none tracking-[-0.04em] text-[#10294d] max-md:text-[30px]">
+              {value}
+            </strong>
+            <span className="mt-2 block whitespace-nowrap text-[14px] text-[#718199] max-md:text-xs">
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 );
