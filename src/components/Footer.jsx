@@ -1,29 +1,52 @@
 
 import "./Footer.css";
+import {
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+} from "react-icons/fa";
 
 const footerGroups = [
   {
     title: "EXPLORE",
-    links: ["AI Solutions", "Research", "Services", "Products"],
+    links: [
+      { label: "AI Solutions", href: "/ai-solutions" },
+      { label: "Research", href: "/research" },
+      { label: "Services", href: "/services" },
+      { label: "Products", href: "/products" },
+    ],
   },
   {
     title: "PRODUCTS",
-    links: ["Webcraft HRMS", "TutorWand", "WCSchool ERP"],
+    links: [
+      { label: "Webcraft HRMS", href: "/products" },
+      { label: "TutorWand", href: "/products" },
+      { label: "WCSchool ERP", href: "/products" },
+    ],
   },
   {
     title: "COMPANY",
-    links: ["About us", "Contact"],
+    links: [
+      { label: "About us", href: "/about" },
+      { label: "Contact", href: "/contact" },
+    ],
   },
 ];
 
 function Footer() {
+  const handleBackToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="site-footer">
-      {/* Green section above the blue footer */}
-      <div className="footer-green-strip"></div>
+    <footer className="site-footer" id="site-footer">
+      <div className="footer-green-strip" />
 
       <div className="footer-inner">
-        {/* Heading and email */}
+        {/* Top contact section */}
         <section className="footer-intro">
           <p className="footer-eyebrow">SAY HELLO</p>
 
@@ -35,79 +58,92 @@ function Footer() {
             href="mailto:admin@webcraft.co.in"
             className="footer-email"
           >
-            admin@webcraft.co.in <span>→</span>
+            admin@webcraft.co.in
+            <span aria-hidden="true">→</span>
           </a>
         </section>
 
-        {/* Brand and description */}
-        <section className="footer-brand">
-          <div className="footer-logo">
-            WebCraft-IT
-          </div>
+        {/* Footer content */}
+        <div className="footer-main">
+          {/* Brand and social links */}
+          <div className="footer-left">
+            <section className="footer-brand">
+              <div className="footer-logo">
+                WebCraft IT
+              </div>
 
-          <p>
-            Research-led, AI-enabled digital transformation
-            for teams that ship.
-          </p>
-        </section>
+              <p>
+                Research-led, AI-enabled digital
+                transformation for teams that ship.
+              </p>
+            </section>
 
-        {/* Social media */}
-        <section className="footer-social">
-          <h3 className="footer-section-title">
-            FOLLOW ALONG
-          </h3>
-
-          <div className="footer-social-links">
-            <a
-              href="https://www.linkedin.com/"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              in
-            </a>
-
-            <a
-              href="https://www.instagram.com/"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ◎
-            </a>
-
-            <a
-              href="https://www.facebook.com/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noreferrer"
-            >
-              f
-            </a>
-          </div>
-        </section>
-
-        {/* Footer link columns */}
-        <nav className="footer-links" aria-label="Footer navigation">
-          {footerGroups.map((group) => (
-            <div className="footer-link-group" key={group.title}>
+            <section className="footer-social">
               <h3 className="footer-section-title">
-                <span></span>
-                {group.title}
+                FOLLOW ALONG
               </h3>
 
-              <ul>
-                {group.links.map((link) => (
-                  <li key={link}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </nav>
+              <div className="footer-social-links">
+                <a
+                  href="https://www.linkedin.com/company/webcraft-it/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn />
+                </a>
 
-        {/* Copyright and back-to-top */}
+                <a
+                  href="https://www.instagram.com/webcraftitcompany/"
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/webcraftit/"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF />
+                </a>
+              </div>
+            </section>
+          </div>
+
+          {/* Navigation columns */}
+          <nav
+            className="footer-links"
+            aria-label="Footer navigation"
+          >
+            {footerGroups.map((group) => (
+              <div
+                className="footer-link-group"
+                key={group.title}
+              >
+                <h3 className="footer-section-title">
+                  <span aria-hidden="true" />
+                  {group.title}
+                </h3>
+
+                <ul>
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href}>
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        </div>
+
+        {/* Bottom section */}
         <div className="footer-bottom">
           <p>
             © 2026 WEBCRAFT IT SERVICES. ALL RIGHTS RESERVED.
@@ -121,9 +157,7 @@ function Footer() {
             className="footer-back-top"
             type="button"
             aria-label="Back to top"
-            onClick={() =>
-              window.scrollTo({ top: 0, behavior: "smooth" })
-            }
+            onClick={handleBackToTop}
           >
             ↑
           </button>
