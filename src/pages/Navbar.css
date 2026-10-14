@@ -1,0 +1,159 @@
+
+.webcraft-navbar {
+  min-height: 120px;
+  padding: 0;
+  background: linear-gradient(
+    110deg,
+    #e6f5ef 0%,
+    #e4f1f1 100%
+  );
+  border: 1px solid #dcebe6;
+}
+
+.navbar-inner {
+  min-height: 120px;
+  padding: 0 48px;
+}
+
+.webcraft-navbar .navbar-brand {
+  margin-right: 40px;
+}
+
+.webcraft-navbar .logo {
+  display: block;
+  width: 195px;
+  height: auto;
+}
+
+.webcraft-navbar .navbar-nav {
+  gap: 30px;
+}
+
+.webcraft-navbar .nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 62px;
+  padding: 0 8px !important;
+  color: #35465b;
+  font-size: 21px;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.webcraft-navbar .nav-link:hover,
+.webcraft-navbar .nav-link.active {
+  color: #20a893;
+}
+
+/* Active navigation underline */
+.webcraft-navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  right: -15px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #209f91, #35bb79);
+}
+
+/* Contact Us button */
+.webcraft-navbar .contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 220px;
+  min-height: 60px;
+  margin-left: 48px;
+  padding: 0 28px;
+  border-radius: 50px;
+  background: linear-gradient(110deg, #279f96, #3cba7c);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.webcraft-navbar .contact-btn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.webcraft-navbar .contact-btn span {
+  font-size: 25px;
+  line-height: 1;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .navbar-inner {
+    padding: 0 25px;
+  }
+
+  .webcraft-navbar .logo {
+    width: 165px;
+  }
+
+  .webcraft-navbar .navbar-nav {
+    gap: 12px;
+  }
+
+  .webcraft-navbar .nav-link {
+    font-size: 17px;
+  }
+
+  .webcraft-navbar .contact-btn {
+    min-width: auto;
+    min-height: 52px;
+    margin-left: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+  .webcraft-navbar,
+  .navbar-inner {
+    min-height: 85px;
+  }
+
+  .navbar-inner {
+    padding: 12px 20px;
+  }
+
+  .webcraft-navbar .logo {
+    width: 155px;
+  }
+
+  .webcraft-navbar .navbar-collapse {
+    padding: 15px 0 20px;
+  }
+
+  .webcraft-navbar .navbar-nav {
+    align-items: stretch !important;
+    gap: 0;
+  }
+
+  .webcraft-navbar .nav-link {
+    min-height: 48px;
+    padding: 8px 0 !important;
+  }
+
+  .webcraft-navbar .nav-link.active::after {
+    left: 0;
+    right: auto;
+    width: 100px;
+    bottom: 0;
+  }
+
+  .webcraft-navbar .contact-btn {
+    width: fit-content;
+    margin: 15px 0 0;
+  }
+}
