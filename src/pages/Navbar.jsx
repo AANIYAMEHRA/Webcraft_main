@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import logo from "../../public/logo.svg";
 
 const NAV_LINKS = [
@@ -33,6 +33,8 @@ const Navbar = () => {
   const [hovered, setHovered] = useState(null);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navLinksRef = useRef({});
+  const indicatorRef = useRef(null);
 
   useEffect(() => {
     const updateScrolled = () => setScrolled(window.scrollY > 0);
@@ -41,6 +43,22 @@ const Navbar = () => {
     window.addEventListener("scroll", updateScrolled, { passive: true });
     return () => window.removeEventListener("scroll", updateScrolled);
   }, []);
+
+  useLayoutEffect(() => {
+    const updateIndicator = () => {
+      const target = navLinksRef.current[hovered || active];
+      const indicator = indicatorRef.current;
+
+      if (!target || !indicator) return;
+
+      indicator.style.width = `${target.offsetWidth}px`;
+      indicator.style.transform = `translateX(${target.offsetLeft}px)`;
+    };
+
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [active, hovered]);
 
   return (
     <header
@@ -54,13 +72,16 @@ const Navbar = () => {
         </a>
 
         <div className="ml-auto hidden items-center justify-end lg:flex">
-          <ul className="m-0 flex list-none items-center justify-end p-0">
+          <ul className="relative m-0 flex list-none items-center justify-end p-0">
             {NAV_LINKS.map(({ label, href }) => {
               const isActive = active === label;
               const lit = isActive || hovered === label;
               return (
                 <li key={label}>
                   <a
+                    ref={(element) => {
+                      navLinksRef.current[label] = element;
+                    }}
                     href={href}
                     onClick={(e) => {
                       e.preventDefault();
@@ -70,16 +91,21 @@ const Navbar = () => {
                     onMouseLeave={() => setHovered(null)}
                     style={{
                       color: lit ? TEAL : DARK,
-                      borderBottomColor: isActive ? TEAL : "transparent",
                       textDecoration: "none",
                     }}
-                    className="block whitespace-nowrap border-b-[3px] border-solid px-3 py-2.5 text-[16px] font-normal leading-none transition-colors"
+                    className="block whitespace-nowrap px-3 py-2.5 text-[16px] font-normal leading-none transition-colors duration-500 ease-in-out"
                   >
                     {label}
                   </a>
                 </li>
               );
             })}
+            <li
+              ref={indicatorRef}
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 left-0 h-[3px] list-none rounded-full bg-[#1f9d7a] transition-[transform,width] duration-500 ease-in-out"
+              style={{ width: 0 }}
+            />
           </ul>
 
           <a
@@ -132,7 +158,7 @@ const Navbar = () => {
                     color: active === label ? TEAL : DARK,
                     textDecoration: "none",
                   }}
-                  className="block py-3 text-lg"
+                  className="block py-3 text-lg transition-colors duration-500 ease-in-out"
                 >
                   {label}
                 </a>
