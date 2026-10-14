@@ -1,5 +1,6 @@
 import Navbar from "./pages/Navbar";
 import Hero from "./pages/Hero";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <div className="relative">
         <Navbar />
         <Hero />
+        <Footer />
       </div>
     </div>
   );
